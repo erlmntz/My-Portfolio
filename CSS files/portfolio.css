@@ -113,38 +113,41 @@ body {
 
         /* SEND EMAIL BUTTON */
         .button_sendemail {
-            font-family: 'Poppins', 'Segoe UI', sans-serif;
-            font-weight: 600;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 28px;
-            font-size: 18px;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.2s ease;
-            margin-top: 20px;
-        }
+        font-family: 'Poppins', 'Segoe UI', sans-serif;
+        font-weight: 600;
+        background-color: black;
+        color: white;
+        text-decoration: none; /* Removes underline */
+        border: none;
+        border-radius: 8px;
+        padding: 12px 28px;
+        font-size: 18px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.2s ease;
+        margin-top: 20px;
+    }
 
-        .button_sendemail i {
-            font-size: 20px;
-        }
+    .button_sendemail i {
+        font-size: 20px;
+    }
 
-        .button_sendemail:hover {
-            background-color: #333;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
+    .button_sendemail:hover {
+        background-color: #333;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
 
-        .button_sendemail:active {
-            transform: translateY(2px);
-            background-color: #9a9a9a;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            transition: all 0.03s ease;
-        }
+    .button_sendemail:active {
+        transform: translateY(2px);
+        background-color: #9a9a9a;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        transition: all 0.03s ease;
+    }
+
+
 
         .about-right {
             flex: 1;
