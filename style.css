@@ -89,13 +89,11 @@ section { padding: 20px; }
   padding: 12px 28px;
   font-size: 18px;
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: 0.2s;
+  display: block;
+  margin: 20px auto 0;          /* fixed invalid margin-top */
   text-decoration: none;
+  width: fit-content;
+  transition: 0.2s;
 }
 
 .button_sendemail:hover {
@@ -384,7 +382,7 @@ section { padding: 20px; }
   transform: translateY(-2px);
 }
 
-/* ----- CONTACT ----- */
+/* ----- CONTACT (auto‑scrolling carousel) ----- */
 .contact-section {
   padding: 60px 20px;
   background: white;
@@ -410,32 +408,65 @@ section { padding: 20px; }
   width: 100px;
 }
 
+/* Carousel container */
 .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 25px;
-  justify-items: center;
+  overflow: hidden;             /* hide the scrollbar */
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 25px;                    /* matches the gap inside .contact-marquee */
+  padding: 10px 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;        /* hide scrollbar Firefox */
+  -ms-overflow-style: none;     /* hide scrollbar IE/Edge */
+}
+.contact-grid::-webkit-scrollbar {
+  display: none;                /* hide scrollbar Chrome/Safari */
 }
 
+/* The moving strip (duplicated items required) */
+.contact-marquee {
+  display: flex;
+  gap: 25px;                    /* same as parent gap */
+  animation: marquee 40s linear infinite;  /* slower continuous scroll */
+  width: fit-content;
+}
+
+/* Pause on hover (optional) */
+.contact-grid:hover .contact-marquee {
+  animation-play-state: paused;
+}
+
+/* Seamless loop: moves left by exactly half the total width (two sets of items) */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Contact items */
 .contact-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px 10px;
-  border-radius: 12px;
+  justify-content: center;
+  padding: 10px 8px;
+  border-radius: 10px;
   background: #f9f9f9;
-  width: 100%;
-  max-width: 140px;
+  min-width: 90px;
+  max-width: 100px;
   border: 1px solid #eee;
   color: black;
   text-decoration: none;
   font-weight: 500;
+  font-size: 13px;
   transition: 0.3s;
 }
 
 .contact-item i {
-  font-size: 42px;
-  margin-bottom: 8px;
+  font-size: 30px;
+  margin-bottom: 5px;
   color: black;
   transition: 0.3s;
 }
@@ -446,7 +477,9 @@ section { padding: 20px; }
   border-color: #ccc;
 }
 
-.contact-item:hover i { transform: scale(1.1); }
+.contact-item:hover i {
+  transform: scale(1.1);
+}
 
 /* ----- FOOTER ----- */
 footer {
@@ -456,8 +489,6 @@ footer {
   text-align: center;
 }
 
-
-
 /* ----- MOBILE ----- */
 @media (max-width: 968px) {
   .seminars-two-column { flex-direction: column; }
@@ -465,24 +496,37 @@ footer {
 
 @media (max-width: 768px) {
   header p { font-size: 28px; padding: 8px 15px; }
-  
+
   .container { flex-direction: column; }
   .about-left h2 { font-size: 32px; text-align: center; }
   .about-left p { font-size: 18px; text-align: center; }
   .button_sendemail { margin: 20px auto 0; }
-  
+
   .skills-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 28px; }
-  
+
   .internship-title { font-size: 28px; }
   .seminars-title { font-size: 28px; }
   .contact-title { font-size: 28px; }
-  
-  .contact-grid { gap: 15px; }
-  .contact-item { max-width: 120px; padding: 12px 8px; }
-  .contact-item i { font-size: 36px; }
-  .contact-item span { font-size: 13px; }
-  
+
+  /* Contact adjustments for tablet */
+  .contact-grid {
+    gap: 15px;
+    padding: 10px 15px;
+  }
+  .contact-marquee {
+    gap: 15px;                  /* keep gap consistent */
+  }
+  .contact-item {
+    min-width: 80px;
+    max-width: 100px;
+    padding: 10px 6px;
+    font-size: 12px;
+  }
+  .contact-item i {
+    font-size: 28px;
+  }
+
   .chat-button { width: 50px; height: 50px; font-size: 20px; }
   .chat-modal {
     width: 90%;
@@ -497,10 +541,17 @@ footer {
   .about-left p { font-size: 16px; }
   .section-title { font-size: 24px; }
   .internship-title, .seminars-title, .contact-title { font-size: 24px; }
-  
-  .contact-item { max-width: 100px; padding: 10px 5px; }
-  .contact-item i { font-size: 30px; }
-  .contact-item span { font-size: 12px; }
+
+  /* Contact adjustments for small phones */
+  .contact-item {
+    min-width: 70px;
+    max-width: 85px;
+    padding: 8px 4px;
+    font-size: 11px;
+  }
+  .contact-item i {
+    font-size: 26px;
+  }
 }
 
 /* ----- TOUCH DEVICES ----- */

@@ -149,6 +149,7 @@
         <a href="https://www.facebook.com/erlmntz.inc/" target="_blank" class="contact-item" data-aos="zoom-in" data-aos-delay="300"><i class="bi bi-facebook"></i><span>Facebook</span></a>
         <a href="https://www.instagram.com/erlmntz.inc/" target="_blank" class="contact-item" data-aos="zoom-in" data-aos-delay="350"><i class="bi bi-instagram"></i><span>Instagram</span></a>
         <a href="https://m.me/erlmntz.inc" target="_blank" class="contact-item" data-aos="zoom-in" data-aos-delay="400"><i class="bi bi-messenger"></i><span>Messenger</span></a>
+        <a href="tel:+639496488368" class="contact-item" data-aos="zoom-in" data-aos-delay="400"><i class="bi bi-telephone"></i><span>Mobile</span></a>
       </div>
     </div>
   </section>
@@ -248,6 +249,28 @@
         lifeLike: true
       }).type("Earl Montañez Sumalbag").pause(2000).delete().go();
     }
+
+    // conatact animation
+    (function() {
+    const contactGrid = document.querySelector('.contact-grid');
+    if (!contactGrid) return;
+
+    const items = Array.from(contactGrid.children);
+    if (items.length === 0) return;
+
+    // Create marquee wrapper
+    const marqueeDiv = document.createElement('div');
+    marqueeDiv.className = 'contact-marquee';
+
+    // Add two full sets of items for seamless loop
+    items.forEach(item => marqueeDiv.appendChild(item.cloneNode(true)));
+    items.forEach(item => marqueeDiv.appendChild(item.cloneNode(true)));
+
+    // Clear grid and insert marquee
+    contactGrid.innerHTML = '';
+    contactGrid.appendChild(marqueeDiv);
+  })();
+
   </script>
 </body>
 </html>
