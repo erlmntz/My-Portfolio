@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- mobile scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Earl's Portfolio</title>
+</head>
+<body>
+  <header>
+    <p>&lt;EmS/&gt;</p>
+  </header>   
+
+  <!-- about -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-left">
+        <h2 id="name-title">Earl Montañez Sumalbag</h2>
+        <p>I'm Earl, a fresh IT graduate looking for opportunities as a Junior Web Developer and Web Designer. I love crafting clean websites and automated solutions — and I'm always ready to learn something new. Let's build something great together!</p>
+        <br>
+        <!-- Email button: works on all devices (Gmail on desktop, mail app on mobile) -->
+        <a id="emailButton" class="button_sendemail" href="https://mail.google.com/mail/?view=cm&fs=1&to=earlsumalbag@gmail.com" target="_blank"><i class="bi bi-envelope"></i> Send Email</a>
+      </div>
+      <div class="about-right">
+        <div class="placeholder">
+          <img src="profile_3.jpg" alt="Profile Picture" class="profile-img">
+          <img src="profile_2.jpg" alt="Profile Picture Hover" class="profile-img-hover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- cursor SVG filter -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+      </filter>
+    </defs>
+  </svg>
+  <!-- cursor container -->
+  <div id="cursor" class="cursor"><span></span></div>
+
+  <!-- skills -->
+  <section class="skills-section">
+    <div class="skills-container">
+      <h2 class="section-title" data-aos="fade-down">Technical & Computer Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100"><h3><i class="bi bi-code-slash"></i> Web Technologies</h3><div class="skill-items"><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">Bootstrap</span><span class="skill-tag">JavaScript</span></div></div>
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200"><h3><i class="bi bi-gear"></i> Scripting & Automation</h3><div class="skill-items"><span class="skill-tag">Google Apps Script</span><span class="skill-tag">Spreadsheet</span><span class="skill-tag">Docs</span></div></div>
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="300"><h3><i class="bi bi-microsoft"></i> Software Suite</h3><div class="skill-items"><span class="skill-tag">Microsoft Office</span><span class="skill-tag">Google Workspace</span></div></div>
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="400"><h3><i class="bi bi-pencil"></i> Design & Prototyping</h3><div class="skill-items"><span class="skill-tag">Figma</span><span class="skill-tag">UI/UX Design</span><span class="skill-tag">Wireframing</span><span class="skill-tag">Interactive Prototyping</span><span class="skill-tag">User Flows</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- internship -->
+  <section class="internship-section">
+    <div class="internship-container" data-aos="fade-up">
+      <h2 class="internship-title">INTERNSHIP EXPERIENCE</h2>
+      <hr class="internship-divider">
+      <div class="internship-company">NIA REGION III - Tambubong, San Rafael, Bulacan, San Rafael, Philippines, 3008</div>
+      <div class="internship-location"><i class="bi bi-geo-alt-fill"></i> San Rafael, Bulacan, Philippines</div>
+      <div class="internship-date"><i class="bi bi-calendar-event-fill"></i> January – April 2026</div>
+      <ul class="internship-list">
+        <li data-aos="fade-up" data-aos-delay="250">Developed an automated IT service ticket system using Google Apps Script to streamline request tracking and resolution.</li>
+        <li data-aos="fade-up" data-aos-delay="300">Developed a Google Apps Script system that stores equipment history and past issues, accessible via QR code scanning to display equipment information.</li>
+        <li data-aos="fade-up" data-aos-delay="350">Inspected new equipment to verify compliance with specifications and ensure proper functionality.</li>
+        <li data-aos="fade-up" data-aos-delay="400">Updated and optimized data sorting in Excel to improve organization and accessibility.</li>
+        <li data-aos="fade-up" data-aos-delay="450">Set up and managed live streaming for NIA events.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- seminars & courses -->
+  <section class="seminars-section">
+    <div class="seminars-container" data-aos="fade-up">
+      <h2 class="seminars-title" data-aos="fade-right">SEMINARS & COURSES</h2>
+      <hr class="seminars-divider" data-aos="fade-right" data-aos-delay="50" />
+      <div class="seminars-two-column">
+        <!-- left: seminars -->
+        <div class="seminar-column" data-aos="fade-right" data-aos-delay="100">
+          <h3 class="column-title"><i class="bi bi-mic"></i> Seminars</h3>
+          <div class="seminar-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="seminar-header">
+              <div class="seminar-icon"><i class="bi bi-shield-lock"></i></div>
+              <h4 class="seminar-title">Data Privacy, Freedom of Information, and AI Safety</h4>
+            </div>
+            <div class="seminar-organization"><i class="bi bi-building"></i> DICT - Region V Provincial Office of Catanduanes</div>
+            <div class="seminar-date"><i class="bi bi-calendar3"></i> February 3, 2026</div>
+            <p class="seminar-description">Comprehensive seminar covering data privacy principles, freedom of information laws, and artificial intelligence safety protocols.</p>
+            <div class="seminar-skills">
+              <span class="seminar-skill-tag">Data Privacy</span>
+              <span class="seminar-skill-tag">FOI</span>
+              <span class="seminar-skill-tag">AI Safety</span>
+              <span class="seminar-skill-tag">Information Security</span>
+            </div>
+          </div>
+          <div class="seminar-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="seminar-header">
+              <div class="seminar-icon"><i class="bi bi-incognito"></i></div>
+              <h4 class="seminar-title">Data Privacy Awareness</h4>
+            </div>
+            <div class="seminar-organization"><i class="bi bi-building"></i> DICT Region 2 Cagayan</div>
+            <div class="seminar-date"><i class="bi bi-calendar3"></i> February 18, 2026</div>
+            <p class="seminar-description">Training on data privacy awareness, best practices for personal data protection, and compliance with privacy regulations.</p>
+            <div class="seminar-skills">
+              <span class="seminar-skill-tag">Data Privacy</span>
+              <span class="seminar-skill-tag">Data Protection</span>
+              <span class="seminar-skill-tag">Privacy Compliance</span>
+              <span class="seminar-skill-tag">Information Security</span>
+            </div>
+          </div>
+        </div>
+        <!-- right: courses -->
+        <div class="seminar-column" data-aos="fade-left" data-aos-delay="100">
+          <h3 class="column-title"><i class="bi bi-book"></i> Courses</h3>
+          <div class="seminar-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="seminar-header">
+              <div class="seminar-icon"><i class="bi bi-code-slash"></i></div>
+              <h4 class="seminar-title">HTML Essentials</h4>
+            </div>
+            <div class="seminar-organization"><i class="bi bi-building"></i> Cisco Networking Academy</div>
+            <div class="seminar-date"><i class="bi bi-calendar3"></i> 2026</div>
+            <div class="seminar-skills">
+              <span class="seminar-skill-tag">HTML5</span>
+              <span class="seminar-skill-tag">Semantic Tags</span>
+              <span class="seminar-skill-tag">Forms</span>
+              <span class="seminar-skill-tag">Tables</span>
+              <span class="seminar-skill-tag">Multimedia</span>
+              <span class="seminar-skill-tag">Web Accessibility</span>
+            </div>
+          </div>
+          <div class="seminar-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="seminar-header">
+              <div class="seminar-icon"><i class="bi bi-headset"></i></div>
+              <h4 class="seminar-title">IT Customer Support Basics</h4>
+            </div>
+            <div class="seminar-organization"><i class="bi bi-building"></i> Cisco Networking Academy</div>
+            <div class="seminar-date"><i class="bi bi-calendar3"></i> 2026</div>
+            <p class="seminar-description">IT Customer Support: Help desk operations, troubleshooting, remote device support, and record keeping.</p>
+            <div class="seminar-skills">
+              <span class="seminar-skill-tag">Help Desk</span>
+              <span class="seminar-skill-tag">Troubleshooting</span>
+              <span class="seminar-skill-tag">Remote Support</span>
+              <span class="seminar-skill-tag">Record Keeping</span>
+              <span class="seminar-skill-tag">Customer Service</span>
+            </div>
+          </div>
+          <div class="seminar-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="seminar-header">
+              <div class="seminar-icon"><i class="bi bi-pc-display"></i></div>
+              <h4 class="seminar-title">Computer Hardware Basics</h4>
+            </div>
+            <div class="seminar-organization"><i class="bi bi-building"></i> Cisco Networking Academy</div>
+            <div class="seminar-date"><i class="bi bi-calendar3"></i> 2026</div>
+            <p class="seminar-description">Computer Hardware: Component installation, preventive maintenance, laptops, mobile devices, and safety standards.</p>
+            <div class="seminar-skills">
+              <span class="seminar-skill-tag">Hardware Installation</span>
+              <span class="seminar-skill-tag">Preventive Maintenance</span>
+              <span class="seminar-skill-tag">Laptops</span>
+              <span class="seminar-skill-tag">Mobile Devices</span>
+              <span class="seminar-skill-tag">Safety Standards</span>
+            </div>
+          </div>
+          <div class="seminar-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="seminar-header">
+              <div class="seminar-icon"><i class="bi bi-graph-up"></i></div>
+              <h4 class="seminar-title">Introduction to Data Science</h4>
+            </div>
+            <div class="seminar-organization"><i class="bi bi-building"></i> Cisco Networking Academy</div>
+            <div class="seminar-date"><i class="bi bi-calendar3"></i> 2026</div>
+            <p class="seminar-description">Introduction to Data Science - Data analytics and AI/ML basics.</p>
+            <div class="seminar-skills">
+              <span class="seminar-skill-tag">Data Science</span>
+              <span class="seminar-skill-tag">Data Analytics</span>
+              <span class="seminar-skill-tag">AI Basics</span>
+              <span class="seminar-skill-tag">Machine Learning</span>
+              <span class="seminar-skill-tag">Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- certificates -->
+  <section class="certificates-section">
+    <div class="certificates-container" data-aos="fade-up">
+      <h2 class="certificates-title">Certificates</h2>
+      <hr class="certificates-divider">
+      <div class="certificates-grid">
+        <div class="certificates-track">
+          <!-- First set of items -->
+          <a href="ComputerHardwareBasicsUpdate20260209-32-z50gei.pdf" target="_blank" class="certificate-item" data-aos="zoom-in" data-aos-delay="100">
+            <img src="computer-hardware.jpg" alt="Computer Hardware Basics" loading="lazy">
+            <span>Computer Hardware Basics</span>
+          </a>
+          <a href="HTMLEssentialsv120260224-32-fnoqvk.pdf" target="_blank" class="certificate-item" data-aos="zoom-in" data-aos-delay="150">
+            <img src="html-essentials.jpg" alt="HTML Essentials" loading="lazy">
+            <span>HTML Essentials</span>
+          </a>
+          <a href="introduction-to-data-science.pdf" target="_blank" class="certificate-item" data-aos="zoom-in" data-aos-delay="200">
+            <img src="introduction-to-data-science.jpg" alt="Introduction to Data Science" loading="lazy">
+            <span>Introduction to Data Science</span>
+          </a>
+          <a href="ITCustomerSupportBasicsv120260206-30-deu472.pdf" target="_blank" class="certificate-item" data-aos="zoom-in" data-aos-delay="250">
+            <img src="it-customer-support.jpg" alt="IT Customer Support Basics" loading="lazy">
+            <span>IT Customer Support Basics</span>
+          </a>
+          <a href="DATA PRIVACY AWARENESS.pdf" target="_blank" class="certificate-item" data-aos="zoom-in" data-aos-delay="300">
+            <img src="data-privacy-awareness.jpg" alt="Data Privacy Awareness" loading="lazy">
+            <span>Data Privacy Awareness</span>
+          </a>
+          <a href="Data Privacy, Freedom of Information, and AI Safety.pdf" target="_blank" class="certificate-item" data-aos="zoom-in" data-aos-delay="350">
+            <img src="data privacy, freedom of information, and ai safety.jpg" alt="Data Privacy, Freedom of Information, and AI Safety" loading="lazy">
+            <span>Data Privacy, Freedom of Information, and AI Safety</span>
+          </a>
+
+          <!-- Duplicate set for seamless loop -->
+          <a href="ComputerHardwareBasicsUpdate20260209-32-z50gei.pdf" target="_blank" class="certificate-item">
+            <img src="computer-hardware.jpg" alt="Computer Hardware Basics" loading="lazy">
+            <span>Computer Hardware Basics</span>
+          </a>
+          <a href="HTMLEssentialsv120260224-32-fnoqvk.pdf" target="_blank" class="certificate-item">
+            <img src="html-essentials.jpg" alt="HTML Essentials" loading="lazy">
+            <span>HTML Essentials</span>
+          </a>
+          <a href="introduction-to-data-science.pdf" target="_blank" class="certificate-item">
+            <img src="introduction-to-data-science.jpg" alt="Introduction to Data Science" loading="lazy">
+            <span>Introduction to Data Science</span>
+          </a>
+          <a href="ITCustomerSupportBasicsv120260206-30-deu472.pdf" target="_blank" class="certificate-item">
+            <img src="it-customer-support.jpg" alt="IT Customer Support Basics" loading="lazy">
+            <span>IT Customer Support Basics</span>
+          </a>
+          <a href="DATA PRIVACY AWARENESS.pdf" target="_blank" class="certificate-item">
+            <img src="data-privacy-awareness.jpg" alt="Data Privacy Awareness" loading="lazy">
+            <span>Data Privacy Awareness</span>
+          </a>
+          <a href="Data Privacy, Freedom of Information, and AI Safety.pdf" target="_blank" class="certificate-item">
+            <img src="data privacy, freedom of information, and ai safety.jpg" alt="Data Privacy, Freedom of Information, and AI Safety" loading="lazy">
+            <span>Data Privacy, Freedom of Information, and AI Safety</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section class="contact-section">
+    <div class="contact-container" data-aos="fade-up">
+      <h2 class="contact-title">Let's Connect</h2>
+      <hr class="contact-divider">
+      <div class="contact-grid">
+        <a href="https://www.linkedin.com/in/earl-sumalbag-9a43b8353/" target="_blank" class="contact-item" data-aos="zoom-in" data-aos-delay="100"><i class="bi bi-linkedin"></i><span>LinkedIn</span></a>
+        <a href="https://ph.jobstreet.com/profiles/earl-sumalbag-WxyMhH7KJj" target="_blank" class="contact-item" data-aos="zoom-in" data-aos-delay="150"><i class="bi bi-briefcase"></i><span>JobStreet</span></a>
+        <a href="https://v2.onlinejobs.ph/jobseekers/info/2237739" target="_blank" class="contact-item" data-aos="zoom-in" data-aos-delay="200"><i class="bi bi-person-workspace"></i><span>OnlineJobs PH</span></a>
+        <a href="https://github.com/erlmntz" target="_blank" class="contact-item" data-aos="zoom-in" data-aos-delay="250"><i class="bi bi-github"></i><span>GitHub</span></a>
+        <a href="https://www.facebook.com/erlmntz.inc/" target="_blank" class="contact-item" data-aos="zoom-in" data-aos-delay="300"><i class="bi bi-facebook"></i><span>Facebook</span></a>
+        <a href="https://www.instagram.com/erlmntz.inc/" target="_blank" class="contact-item" data-aos="zoom-in" data-aos-delay="350"><i class="bi bi-instagram"></i><span>Instagram</span></a>
+        <a href="https://m.me/erlmntz.inc" target="_blank" class="contact-item" data-aos="zoom-in" data-aos-delay="400"><i class="bi bi-messenger"></i><span>Messenger</span></a>
+        <a href="tel:+639496488368" class="contact-item" data-aos="zoom-in" data-aos-delay="400"><i class="bi bi-telephone"></i><span>Mobile</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Earl Montanez Sumalbag. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: false, offset: 120, easing: 'ease-in-out', mirror: true });
+
+    function isTouchDevice() {
+      return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.matchMedia("(pointer: coarse)").matches);
+    }
+
+    if (isTouchDevice()) {
+      document.body.classList.add('touch-device');
+    } else {
+      // Custom cursor trail (desktop only) - smaller version
+      class CursorTrail {
+        constructor() {
+          this.cursor = document.getElementById('cursor');
+          this.cursor.innerHTML = ''; // clear initial span
+          this.dotCount = 10;
+          this.dots = [];
+          this.mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+          for (let i = 0; i < this.dotCount; i++) {
+            let dot = document.createElement('span');
+            let size = 20 - i * 1.2; // smaller base size
+            dot.style.width = size + 'px';
+            dot.style.height = size + 'px';
+            dot.style.opacity = 1 - i * 0.08;
+            dot.style.backgroundColor = 'white';
+            this.cursor.appendChild(dot);
+            this.dots.push({
+              el: dot,
+              x: this.mouse.x,
+              y: this.mouse.y,
+              size: size
+            });
+          }
+
+          this.animate();
+
+          document.addEventListener('mousemove', (e) => {
+            this.mouse.x = e.clientX;
+            this.mouse.y = e.clientY;
+          });
+
+          // Add hover effect for interactive elements
+          document.querySelectorAll('button, .skill-tag, a, .button_sendemail').forEach(el => {
+            el.addEventListener('mouseenter', () => this.cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => this.cursor.classList.remove('hover'));
+          });
+
+          // Hide cursor when leaving window
+          document.addEventListener('mouseleave', () => this.cursor.style.opacity = '0');
+          document.addEventListener('mouseenter', () => this.cursor.style.opacity = '1');
+        }
+
+        animate() {
+          let x = this.mouse.x;
+          let y = this.mouse.y;
+
+          this.dots.forEach((dot, i) => {
+            if (i === 0) {
+              dot.x += (x - dot.x) * 0.28;
+              dot.y += (y - dot.y) * 0.28;
+            } else {
+              let prev = this.dots[i - 1];
+              dot.x += (prev.x - dot.x) * 0.18;
+              dot.y += (prev.y - dot.y) * 0.18;
+            }
+            dot.el.style.transform = `translate(${dot.x}px, ${dot.y}px)`;
+          });
+
+          requestAnimationFrame(() => this.animate());
+        }
+      }
+      new CursorTrail();
+    }
+
+    // TypeIt animation for name
+    const nameEl = document.getElementById('name-title');
+    if (nameEl) {
+      nameEl.innerHTML = ''; // Clear for TypeIt
+      new TypeIt("#name-title", {
+        speed: 80,
+        startDelay: 900,
+        cursor: true,
+        loop: true,
+        lifeLike: true
+      }).type("Earl Montañez Sumalbag").pause(2000).delete().go();
+    }
+
+    // ----- EMAIL BUTTON: desktop → Gmail web, mobile → mail app -----
+    document.getElementById('emailButton').addEventListener('click', function(e) {
+      e.preventDefault();               // stop the default link behaviour
+      const email = 'earlsumalbag@gmail.com';
+      if (isTouchDevice()) {
+        // mobile: open default mail app
+        window.location.href = 'mailto:' + email;
+      } else {
+        // desktop: open Gmail compose in a new tab
+        window.open('https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(email), '_blank');
+      }
+    });
+  </script>
+</body>
+</html>

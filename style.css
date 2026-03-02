@@ -1,0 +1,635 @@
+/* ----- BASE & RESETS ----- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+* { cursor: none !important; }
+
+.cursor {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 9999;
+  filter: url("#goo");
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+.cursor span {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  transform: translate(-50%, -50%);
+}
+
+.cursor.hover span {
+  width: 28px !important;    /* smaller hover size */
+  height: 28px !important;
+  opacity: 0.9 !important;
+}
+
+.cursor.hover { animation: pulse 1s infinite alternate; }
+
+@keyframes pulse {
+  to { filter: url("#goo") brightness(1.5); }
+}
+
+/* ----- HEADER ----- */
+header {
+  padding: 15px;
+  background: black;
+  color: white;
+}
+
+header p {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  padding: 10px 25px;
+}
+
+/* ----- ABOUT ----- */
+section { padding: 20px; }
+
+.about-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-left { flex: 1; }
+
+.about-left h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 900;
+  color: #000000;
+}
+
+.about-left p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.button_sendemail {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+  margin: 20px auto 0;
+  text-decoration: none;
+  width: fit-content;
+  transition: 0.2s;
+}
+
+.button_sendemail:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-right { flex: 1; }
+
+.placeholder {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.profile-img, .profile-img-hover {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  transition: opacity 0.1s;
+}
+
+.profile-img-hover {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.placeholder:hover .profile-img { opacity: 0; }
+.placeholder:hover .profile-img-hover { opacity: 1; }
+
+/* ----- SKILLS ----- */
+.skills-section {
+  padding: 60px 20px;
+  background: black;
+}
+
+.skills-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: white;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.skill-category {
+  background: #222;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.skill-category h3 {
+  font-size: 22px;
+  margin-bottom: 18px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: white;
+  color: black;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.skill-tag:hover {
+  background: #ddd;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255,255,255,0.3);
+}
+
+/* ----- INTERNSHIP ----- */
+.internship-section {
+  padding: 60px 20px;
+  background: white;
+}
+
+.internship-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.internship-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: black;
+  font-weight: 700;
+}
+
+.internship-divider {
+  border: none;
+  border-top: 3px solid black;
+  margin: 0 0 30px 0;
+}
+
+.internship-company {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.internship-location, .internship-date {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.internship-date { margin-bottom: 25px; }
+
+.internship-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.internship-list li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  color: #333;
+}
+
+.internship-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: black;
+  font-size: 20px;
+}
+
+/* ----- SEMINARS ----- */
+.seminars-section {
+  padding: 60px 20px;
+  background: black;
+}
+
+.seminars-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.seminars-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 700;
+}
+
+.seminars-divider {
+  border: none;
+  border-top: 3px solid white;
+  margin: 0 0 40px 0;
+}
+
+.seminars-two-column {
+  display: flex;
+  gap: 40px;
+}
+
+.seminar-column { flex: 1; }
+
+.column-title {
+  font-size: 28px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.seminar-card {
+  background: #222;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  transition: 0.3s;
+  border: 1px solid #333;
+}
+
+.seminar-card:hover {
+  transform: translateY(-5px);
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+.seminar-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.seminar-icon {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.seminar-icon i {
+  color: black;
+  font-size: 24px;
+}
+
+.seminar-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.seminar-organization, .seminar-date {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.seminar-date { font-size: 14px; margin-bottom: 15px; }
+
+.seminar-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.seminar-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.seminar-skill-tag {
+  background: #333;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  border: 1px solid #444;
+  transition: 0.3s;
+}
+
+.seminar-skill-tag:hover {
+  background: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* ----- CERTIFICATES ----- */
+.certificates-section {
+  padding: 60px 20px;
+  background: white;
+  overflow: hidden;
+}
+
+.certificates-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.certificates-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: black;
+  font-weight: 700;
+}
+
+.certificates-divider {
+  border: none;
+  border-top: 3px solid black;
+  margin: 0 auto 40px;
+  width: 100px;
+}
+
+.certificates-grid {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.certificates-track {
+  display: flex;
+  gap: 30px;
+  width: fit-content;
+  animation: scrollCertificates 40s linear infinite;
+}
+
+.certificates-grid:hover .certificates-track {
+  animation-play-state: paused;
+}
+
+.certificate-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  background: black;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 20px 15px 15px;
+  transition: 0.3s;
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.certificate-item:hover {
+  transform: translateY(-5px);
+  background: #111;
+  border-color: #333;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.certificate-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+
+.certificate-item:hover img {
+  transform: scale(1.02);
+}
+
+.certificate-item span {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+  color: white;
+}
+
+@keyframes scrollCertificates {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 15px)); }
+}
+
+/* ----- CONTACT ----- */
+.contact-section {
+  padding: 60px 20px;
+  background: black;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 700;
+}
+
+.contact-divider {
+  border: none;
+  border-top: 3px solid white;
+  margin: 0 auto 40px;
+  width: 100px;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 10px 20px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.contact-item i {
+  font-size: 36px;
+  margin-bottom: 8px;
+  color: white;
+  transition: 0.3s;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  color: #ccc;
+}
+
+.contact-item:hover i {
+  transform: scale(1.15);
+  color: #fff;
+}
+
+/* ----- FOOTER ----- */
+footer {
+  background: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ----- MOBILE ----- */
+@media (max-width: 968px) {
+  .seminars-two-column { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+  header p { font-size: 28px; padding: 8px 15px; }
+
+  .container { flex-direction: column; }
+  .about-left h2 { font-size: 32px; text-align: center; }
+  .about-left p { font-size: 18px; text-align: center; }
+  .button_sendemail { margin: 20px auto 0; }
+
+  .skills-grid { grid-template-columns: 1fr; }
+  .section-title { font-size: 28px; }
+
+  .internship-title { font-size: 28px; }
+  .seminars-title { font-size: 28px; }
+  .contact-title { font-size: 28px; }
+  .certificates-title { font-size: 28px; }
+
+  .contact-grid {
+    gap: 15px;
+    padding: 10px 15px;
+  }
+  .contact-item {
+    font-size: 13px;
+  }
+  .contact-item i {
+    font-size: 32px;
+  }
+
+  /* certificates responsiveness */
+  .certificates-track {
+    gap: 20px;
+  }
+  .certificate-item {
+    width: 180px;
+    padding: 15px 10px 10px;
+  }
+  .certificate-item span {
+    font-size: 13px;
+  }
+
+  .chat-button { width: 50px; height: 50px; font-size: 20px; }
+  .chat-modal {
+    width: 90%;
+    max-width: 350px;
+    left: 5%; right: 5%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-left h2 { font-size: 28px; }
+  .about-left p { font-size: 16px; }
+  .section-title { font-size: 24px; }
+  .internship-title, .seminars-title, .contact-title { font-size: 24px; }
+  .certificates-title { font-size: 24px; }
+
+  .contact-item {
+    font-size: 12px;
+  }
+  .contact-item i {
+    font-size: 28px;
+  }
+
+  /* certificates responsiveness */
+  .certificate-item {
+    width: 160px;
+  }
+}
+
+/* ----- TOUCH DEVICES ----- */
+.touch-device * { cursor: auto !important; }
+.touch-device .touch-device .cursor { display: none !important; }
+
+/* ----- DESKTOP ADJUSTMENT  ----- */
+@media (min-width: 769px) {
+  .button_sendemail {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
