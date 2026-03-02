@@ -24,8 +24,8 @@ body {
 }
 
 .cursor.hover span {
-  width: 36px !important;
-  height: 36px !important;
+  width: 28px !important;    /* smaller hover size */
+  height: 28px !important;
   opacity: 0.9 !important;
 }
 
@@ -72,7 +72,7 @@ section { padding: 20px; }
   font-size: 42px;
   margin-bottom: 20px;
   font-weight: 900;
-  color: #333;
+  color: #000000;
 }
 
 .about-left p {
@@ -382,7 +382,7 @@ section { padding: 20px; }
   transform: translateY(-2px);
 }
 
-/* ----- CERTIFICATES (black cards, white text) ----- */
+/* ----- CERTIFICATES ----- */
 .certificates-section {
   padding: 60px 20px;
   background: white;
@@ -427,15 +427,14 @@ section { padding: 20px; }
   animation-play-state: paused;
 }
 
-/* Black card styles */
 .certificate-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
   color: white;
-  background: #222;
-  border: 1px solid #333;
+  background: black;
+  border: 1px solid #222;
   border-radius: 12px;
   padding: 20px 15px 15px;
   transition: 0.3s;
@@ -445,8 +444,8 @@ section { padding: 20px; }
 
 .certificate-item:hover {
   transform: translateY(-5px);
-  background: #333;
-  border-color: #555;
+  background: #111;
+  border-color: #333;
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
@@ -457,7 +456,7 @@ section { padding: 20px; }
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
-  border: 1px solid #555;
+  border: 1px solid #333;
   transition: 0.3s;
 }
 
@@ -473,7 +472,6 @@ section { padding: 20px; }
   color: white;
 }
 
-/* Keyframes for horizontal scrolling */
 @keyframes scrollCertificates {
   0% { transform: translateX(0); }
   100% { transform: translateX(calc(-50% - 15px)); }
@@ -510,7 +508,7 @@ section { padding: 20px; }
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
   padding: 10px 20px;
 }
 
@@ -518,35 +516,28 @@ section { padding: 20px; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 10px 8px;
-  border-radius: 10px;
-  background: #222;
-  min-width: 90px;
-  max-width: 100px;
-  border: 1px solid #333;
-  color: white;
   text-decoration: none;
+  color: white;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
   transition: 0.3s;
 }
 
 .contact-item i {
-  font-size: 30px;
-  margin-bottom: 5px;
+  font-size: 36px;
+  margin-bottom: 8px;
   color: white;
   transition: 0.3s;
 }
 
 .contact-item:hover {
   transform: translateY(-5px);
-  background: #333;
-  border-color: #555;
+  color: #ccc;
 }
 
 .contact-item:hover i {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  color: #fff;
 }
 
 /* ----- FOOTER ----- */
@@ -584,13 +575,10 @@ footer {
     padding: 10px 15px;
   }
   .contact-item {
-    min-width: 80px;
-    max-width: 100px;
-    padding: 10px 6px;
-    font-size: 12px;
+    font-size: 13px;
   }
   .contact-item i {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   /* certificates responsiveness */
@@ -622,13 +610,10 @@ footer {
   .certificates-title { font-size: 24px; }
 
   .contact-item {
-    min-width: 70px;
-    max-width: 85px;
-    padding: 8px 4px;
-    font-size: 11px;
+    font-size: 12px;
   }
   .contact-item i {
-    font-size: 26px;
+    font-size: 28px;
   }
 
   /* certificates responsiveness */
