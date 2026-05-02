@@ -9,10 +9,27 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Earl's Portfolio</title>
+  <script>
+    // Apply theme as early as possible to avoid flash of unstyled colors
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 </head>
 <body>
   <header>
     <p>&lt;EmS/&gt;</p>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">
+      <i class="bi bi-moon-stars-fill icon-moon" aria-hidden="true"></i>
+      <i class="bi bi-sun-fill icon-sun" aria-hidden="true"></i>
+    </button>
   </header>   
 
   <!-- about -->
@@ -324,7 +341,7 @@
             dot.style.width = size + 'px';
             dot.style.height = size + 'px';
             dot.style.opacity = 1 - i * 0.08;
-            dot.style.backgroundColor = 'white';
+            dot.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--cursor-color').trim() || 'white';
             this.cursor.appendChild(dot);
             this.dots.push({
               el: dot,
@@ -386,6 +403,36 @@
         lifeLike: true
       }).type("Earl Montañez Sumalbag").pause(2000).delete().go();
     }
+
+    // ----- THEME TOGGLE -----
+    (function setupThemeToggle() {
+      var btn = document.getElementById('themeToggle');
+      if (!btn) return;
+
+      function currentTheme() {
+        return document.documentElement.getAttribute('data-theme') || 'light';
+      }
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem('theme', theme); } catch (e) {}
+        btn.setAttribute('aria-pressed', theme === 'dark');
+      }
+      btn.setAttribute('aria-pressed', currentTheme() === 'dark');
+
+      btn.addEventListener('click', function () {
+        applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+      });
+
+      // Follow OS changes only if the user hasn't explicitly chosen yet
+      try {
+        var mq = window.matchMedia('(prefers-color-scheme: dark)');
+        mq.addEventListener && mq.addEventListener('change', function (e) {
+          if (!localStorage.getItem('theme')) {
+            applyTheme(e.matches ? 'dark' : 'light');
+          }
+        });
+      } catch (e) {}
+    })();
 
     // ----- EMAIL BUTTON: desktop → Gmail web, mobile → mail app -----
     document.getElementById('emailButton').addEventListener('click', function(e) {
